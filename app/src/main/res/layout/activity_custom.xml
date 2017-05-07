@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center"
+              android:orientation="vertical">
+    <!--普通Textview-->
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:text="Hellow Android!"/>
+    <!--有背景的textview-->
+    <cd.com.herobookdemo.CustomView1
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:text=" Hellow Android"
+        android:textColor="@color/color_ffffff"
+        android:textSize="15sp"/>
+    <!--有渐变有textview-->
+    <cd.com.herobookdemo.CustomView2
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:text=" Hellow Android"
+        android:textColor="@color/color_ffffff"
+        android:textSize="15sp"/>/>
+</LinearLayout>
