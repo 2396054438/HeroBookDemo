@@ -2,6 +2,7 @@ package cd.com.herobookdemo;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 /**
  * Created by ChenDan on 2017/5/7.
@@ -11,10 +12,24 @@ import android.os.Bundle;
  * 第三个是继承自Viwe实现全新的控件
  */
 
-public class CustomViewActivity extends Activity{
+public class CustomViewActivity extends Activity {
+    CustomView3 mCustomView3;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_custom);
+        mCustomView3 = (CustomView3) findViewById(R.id.custom3);
+        mCustomView3.setOnClickListener(new CustomView3.onClick() {
+            @Override
+            public void onLeftClick() {
+                Toast.makeText(CustomViewActivity.this, "onLeftClick", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onRightClick() {
+                Toast.makeText(CustomViewActivity.this, "onRightClick", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

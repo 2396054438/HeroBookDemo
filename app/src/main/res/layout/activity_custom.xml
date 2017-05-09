@@ -1,18 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:gravity="center"
-              android:orientation="vertical">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <cd.com.herobookdemo.CustomView3
+        android:id="@+id/custom3"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="@dimen/magin_top"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        app:leftColor="@color/color_ffffff"
+        app:leftSize="8sp"
+        app:leftText="返回"
+        app:rightColor="@color/color_ffffff"
+        app:rightSize="8sp"
+        app:rightText="更多"
+        app:titleColor="@color/color_ffffff"
+        app:titleSize="13sp"
+        app:titleText="复合View"/>
     <!--普通Textview-->
     <TextView
         android:layout_width="200dp"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:text="Hellow Android!"/>
     <!--有背景的textview-->
     <cd.com.herobookdemo.CustomView1
         android:layout_width="200dp"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         android:gravity="center"
         android:text=" Hellow Android"
         android:textColor="@color/color_ffffff"
@@ -20,9 +39,14 @@
     <!--有渐变有textview-->
     <cd.com.herobookdemo.CustomView2
         android:layout_width="200dp"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:text=" Hellow Android"
         android:textColor="@color/color_ffffff"
         android:textSize="15sp"/>/>
+
+    <cd.com.herobookdemo.CustomView4
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
 </LinearLayout>
