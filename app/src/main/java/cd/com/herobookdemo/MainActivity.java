@@ -37,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
                     case 1:
                         openActivity(CustomViewActivity.class);
                     break;
+                    case 2:
+                        openActivity(MusicRecfActivity.class);
+                        break;
                 }
             }
 
@@ -51,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         mlist = new ArrayList<>();
         mlist.add("View的测量");
         mlist.add("自定义View之对现有控件进行扩展");
+        mlist.add("音频条形图");
 
     }
 

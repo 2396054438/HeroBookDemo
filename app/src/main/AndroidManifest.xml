@@ -17,6 +17,7 @@
         </activity>
         <activity android:name=".ViewMeasureActivity"/>
         <activity android:name=".CustomViewActivity"/>
+        <activity android:name=".MusicRecfActivity"/>
     </application>
 
 </manifest>
