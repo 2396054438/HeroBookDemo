@@ -30,15 +30,18 @@ public class MainActivity extends AppCompatActivity {
         adapter.setOnItemClick(new MainAdapter.onItemClick() {
             @Override
             public void onItemClick(View view, int pos) {
-                switch (pos){
+                switch (pos) {
                     case 0:
                         openActivity(ViewMeasureActivity.class);
-                    break;
+                        break;
                     case 1:
                         openActivity(CustomViewActivity.class);
-                    break;
+                        break;
                     case 2:
                         openActivity(MusicRecfActivity.class);
+                        break;
+                    case 3:
+                        openActivity(CustomViewGroupActivity.class);
                         break;
                 }
             }
@@ -55,11 +58,12 @@ public class MainActivity extends AppCompatActivity {
         mlist.add("View的测量");
         mlist.add("自定义View之对现有控件进行扩展");
         mlist.add("音频条形图");
+        mlist.add("自定义ViewGroup");
 
     }
 
     public void openActivity(Class clas) {
-        Intent intent = new Intent(mContext,clas);
+        Intent intent = new Intent(mContext, clas);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
