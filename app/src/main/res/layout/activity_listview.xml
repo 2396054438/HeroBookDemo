@@ -6,13 +6,21 @@
     <!--android:divider="@null":设置listview下划线，不需要线直接设置成null，需要线可定义颜色，
     并且通过android:dividerHeight来设置高度，listSelector设置点击的颜色，
     scrollbars设置滚动条显示方式或者不显示-->
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Add"/>
+
     <ListView
         android:id="@+id/listview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:divider="@color/color_999999"
         android:dividerHeight="1dp"
         android:listSelector="@color/colorAccent"
         android:scrollbars="none"
         />
+
+
 </LinearLayout>
