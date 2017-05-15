@@ -12,7 +12,7 @@
         android:layout_height="50dp"
         android:text="Add"/>
 
-    <ListView
+    <cd.com.herobookdemo.listview.ElasticityListview
         android:id="@+id/listview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

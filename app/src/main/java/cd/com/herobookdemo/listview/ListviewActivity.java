@@ -114,7 +114,6 @@ public class ListviewActivity extends Activity {
                 if (firstVisiableItem + visiableItemCount == totleItemCount && totleItemCount > 0) {
                     //滑动到最后一个
                 }
-
                 int lastVisiblePosition = mListview.getLastVisiblePosition();
                 if (firstVisiableItem > lastVisiblePosition) {
                     //上滑
@@ -122,11 +121,12 @@ public class ListviewActivity extends Activity {
                     //下滑
                 }
                 lastVisiblePosition=firstVisiableItem;
-
                 Log.d("ListviewActivity", "====");
                 //在滚动过程中，一直调用
             }
         });
+        
+
 
     }
 
