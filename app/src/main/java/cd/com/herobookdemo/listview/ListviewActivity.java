@@ -4,8 +4,11 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -41,6 +44,7 @@ public class ListviewActivity extends Activity {
         setContentView(R.layout.activity_listview);
         mContext = ListviewActivity.this;
         mListview = (ListView) findViewById(R.id.listview);
+        mListview.setEmptyView(findViewById(R.id.tv_empty));
         mBtn = (Button) findViewById(R.id.btn_add);
         mlist = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
@@ -48,6 +52,7 @@ public class ListviewActivity extends Activity {
         }
         final MyAdapter adapter = new MyAdapter();
         mListview.setAdapter(adapter);
+
         mBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,6 +61,73 @@ public class ListviewActivity extends Activity {
                 mListview.setSelection(mlist.size() - 1);
             }
         });
+        mListview.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                switch (motionEvent.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        //点击下去的一瞬间触发
+                        Log.d("ListviewActivity", "ACTION_DOWN");
+                        break;
+                    case MotionEvent.ACTION_MOVE:
+                        //手机移动
+                        Log.d("ListviewActivity", "ACTION_MOVE");
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        //手指离开
+                        Log.d("ListviewActivity", "ACTION_UP");
+                        break;
+                }
+
+
+                return false;
+            }
+        });
+        mListview.setOnScrollListener(new AbsListView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(AbsListView absListView, int state) {
+                Log.d("ListviewActivity", "onScrollStateChanged");
+                switch (state) {
+                    case SCROLL_STATE_FLING:
+                        //惯性滑动时候
+                        break;
+                    case SCROLL_STATE_IDLE:
+                        //滑动停止时
+                        break;
+                    case SCROLL_STATE_TOUCH_SCROLL:
+                        //正在滚动时
+                        break;
+                }
+            }
+
+            /**
+             *
+             * @param absListView
+             * @param firstVisiableItem
+             * @param visiableItemCount
+             * @param totleItemCount
+             * 当手指没有滑动的时候，这个方法只会回调两次，否则回调三次
+             */
+            @Override
+            public void onScroll(AbsListView absListView,
+                                 int firstVisiableItem, int visiableItemCount, int totleItemCount) {
+                if (firstVisiableItem + visiableItemCount == totleItemCount && totleItemCount > 0) {
+                    //滑动到最后一个
+                }
+
+                int lastVisiblePosition = mListview.getLastVisiblePosition();
+                if (firstVisiableItem > lastVisiblePosition) {
+                    //上滑
+                }else if (lastVisiblePosition>firstVisiableItem){
+                    //下滑
+                }
+                lastVisiblePosition=firstVisiableItem;
+
+                Log.d("ListviewActivity", "====");
+                //在滚动过程中，一直调用
+            }
+        });
+
     }
 
     class MyAdapter extends BaseAdapter {

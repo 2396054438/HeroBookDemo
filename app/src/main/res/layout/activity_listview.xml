@@ -22,5 +22,12 @@
         android:scrollbars="none"
         />
 
+    <TextView
+        android:id="@+id/tv_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="还没有数据呢~"
+        android:visibility="gone"/>
 
 </LinearLayout>
