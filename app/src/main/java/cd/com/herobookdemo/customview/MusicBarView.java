@@ -1,4 +1,4 @@
-package cd.com.herobookdemo;
+package cd.com.herobookdemo.customview;
 
 import android.content.Context;
 import android.graphics.Canvas;

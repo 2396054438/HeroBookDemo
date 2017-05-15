@@ -4,7 +4,7 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
-    <cd.com.herobookdemo.CustomViewGroup
+    <cd.com.herobookdemo.customview.CustomViewGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbars="vertical">
@@ -15,6 +15,6 @@
             android:src="@mipmap/ic_launcher"/>
 
 
-    </cd.com.herobookdemo.CustomViewGroup>
+    </cd.com.herobookdemo.customview.CustomViewGroup>
     >
 </LinearLayout>

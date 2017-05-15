@@ -1,10 +1,12 @@
-package cd.com.herobookdemo;
+package cd.com.herobookdemo.customview;
 
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.widget.TextView;
+
+import cd.com.herobookdemo.R;
 
 /**
  * Created by ChenDan on 2017/5/7.

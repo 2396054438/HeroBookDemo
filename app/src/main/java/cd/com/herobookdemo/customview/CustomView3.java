@@ -1,4 +1,4 @@
-package cd.com.herobookdemo;
+package cd.com.herobookdemo.customview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import cd.com.herobookdemo.R;
 
 /**
  * Created by chenDan on 2017/5/9.

@@ -1,8 +1,10 @@
-package cd.com.herobookdemo;
+package cd.com.herobookdemo.customview;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.Toast;
+
+import cd.com.herobookdemo.R;
 
 /**
  * Created by ChenDan on 2017/5/7.

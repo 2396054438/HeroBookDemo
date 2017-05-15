@@ -11,6 +11,12 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
+import cd.com.herobookdemo.customview.CustomViewActivity;
+import cd.com.herobookdemo.customview.CustomViewGroupActivity;
+import cd.com.herobookdemo.customview.MusicRecfActivity;
+import cd.com.herobookdemo.customview.ViewMeasureActivity;
+import cd.com.herobookdemo.listview.ListviewActivity;
+
 public class MainActivity extends AppCompatActivity {
     RecyclerView mRecyclerView;
     Context mContext;
@@ -43,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
                     case 3:
                         openActivity(CustomViewGroupActivity.class);
                         break;
+                    case 4:
+                        openActivity(ListviewActivity.class);
+                        break;
                 }
             }
 
@@ -59,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
         mlist.add("自定义View之对现有控件进行扩展");
         mlist.add("音频条形图");
         mlist.add("自定义ViewGroup");
+        mlist.add("listview相关");
 
     }
 

@@ -15,10 +15,11 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ViewMeasureActivity"/>
-        <activity android:name=".CustomViewActivity"/>
-        <activity android:name=".MusicRecfActivity"/>
-        <activity android:name=".CustomViewGroupActivity"/>
+        <activity android:name=".customview.ViewMeasureActivity"/>
+        <activity android:name=".customview.CustomViewActivity"/>
+        <activity android:name=".customview.MusicRecfActivity"/>
+        <activity android:name=".customview.CustomViewGroupActivity"/>
+        <activity android:name=".listview.ListviewActivity"/>
     </application>
 
 </manifest>

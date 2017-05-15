@@ -1,4 +1,4 @@
-package cd.com.herobookdemo;
+package cd.com.herobookdemo.customview;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -78,18 +78,16 @@ public class CustomViewGroup extends ViewGroup {
         return height;
     }
 
-
-    //滑动事件
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         int y = (int) event.getY();
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 mLastY = y;
-                mStart = getScrollY();
+                mStart = (int) getScaleY();
                 break;
             case MotionEvent.ACTION_MOVE:
-                if (!mScroller.isFinished()) {
+                if (mScroller.isFinished()) {
                     mScroller.abortAnimation();
                 }
                 int dy = mLastY - y;
@@ -98,29 +96,41 @@ public class CustomViewGroup extends ViewGroup {
                 }
                 if (getScrollY() > getHeight() - mScreenHeight) {
                     dy = 0;
+                    scrollTo(0, dy);
+                    mLastY = y;
+
+
                 }
-                scrollBy(0, dy);
-                mLastY = y;
                 break;
             case MotionEvent.ACTION_UP:
                 mEnd = getScrollY();
                 int dScrollY = mEnd - mStart;
                 if (dScrollY > 0) {
                     if (dScrollY < mScreenHeight / 3) {
-                        mScroller.startScroll(0, getScrollY(), 0, -dScrollY);
+                        mScroller.startScroll(
+                                0, getScrollY(),
+                                0, -dScrollY);
                     } else {
-                        mScroller.startScroll(0, getScrollY(), 0, mScreenHeight - dScrollY);
+                        mScroller.startScroll(
+                                0, getScrollY(),
+                                0, mScreenHeight - dScrollY);
                     }
                 } else {
                     if (-dScrollY < mScreenHeight / 3) {
-                        mScroller.startScroll(0, getScrollY(), 0, -dScrollY);
+                        mScroller.startScroll(
+                                0, getScrollY(),
+                                0, -dScrollY);
                     } else {
-                        mScroller.startScroll(0, getScrollY(), 0, -mScreenHeight - dScrollY);
+                        mScroller.startScroll(
+                                0, getScrollY(),
+                                0, -mScreenHeight - dScrollY);
                     }
+
                 }
+                postInvalidate();
                 break;
+
         }
-        postInvalidate();
         return true;
     }
 
