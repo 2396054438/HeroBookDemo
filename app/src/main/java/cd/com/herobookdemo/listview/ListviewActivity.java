@@ -125,8 +125,12 @@ public class ListviewActivity extends Activity {
                 //在滚动过程中，一直调用
             }
         });
-        
-
+        /**
+         * 遍历listview每一个item的方法，获取到的是每一个item View
+         */
+        for (int i = 0; i <mListview.getChildCount() ; i++) {
+            View view = mListview.getChildAt(i);
+        }
 
     }
 

@@ -15,6 +15,8 @@ import cd.com.herobookdemo.customview.CustomViewActivity;
 import cd.com.herobookdemo.customview.CustomViewGroupActivity;
 import cd.com.herobookdemo.customview.MusicRecfActivity;
 import cd.com.herobookdemo.customview.ViewMeasureActivity;
+import cd.com.herobookdemo.listview.ChatActivity;
+import cd.com.herobookdemo.listview.HideToolBarActivity;
 import cd.com.herobookdemo.listview.ListviewActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -52,6 +54,12 @@ public class MainActivity extends AppCompatActivity {
                     case 4:
                         openActivity(ListviewActivity.class);
                         break;
+                    case 5:
+                        openActivity(HideToolBarActivity.class);
+                        break;
+                    case 6:
+                        openActivity(ChatActivity.class);
+                        break;
                 }
             }
 
@@ -69,6 +77,8 @@ public class MainActivity extends AppCompatActivity {
         mlist.add("音频条形图");
         mlist.add("自定义ViewGroup");
         mlist.add("listview相关");
+        mlist.add("滑动隐藏状态栏");
+        mlist.add("聊天布局");
 
     }
 
